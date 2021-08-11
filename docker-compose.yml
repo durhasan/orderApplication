@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  mongodb:
+    image: mongo
+    container_name: "mongodb"
+    ports:
+      - "27017:27017"
+  app:
+    image: api-docker-image
+    ports:
+      - 4000:4000
+    links:
+      - mongodb
